@@ -20,8 +20,12 @@ const Navber = () => {
                     <Link href="/" className="text-[#FF9900] font-bold text-lg hover:opacity-80 transition-opacity">Home</Link>
                     <Link href="/about" className="text-slate-700 font-semibold text-lg hover:text-black transition-colors">About</Link>
                     <Link href="/contact" className="text-slate-700 font-semibold text-lg hover:text-black transition-colors">Contact</Link>
-                    <Link href="/products" className="text-slate-700 font-semibold text-lg hover:text-black transition-colors">Products</Link>
-                    <Link href="/AddProduct" className="text-slate-700 font-semibold text-lg hover:text-black transition-colors">Add Product</Link>
+                    <Link href="/solutions" className="text-slate-700 font-semibold text-lg hover:text-[#FF9900] transition-colors">
+                        Solutions
+                    </Link>
+                    <Link href="/addSolution" className="text-slate-700 font-semibold text-lg hover:text-black transition-colors">
+                        Add Solution
+                    </Link>
                 </div>
 
                 {/* Navbar CTA */}

@@ -1,10 +1,25 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import {Filter } from "lucide-react";
-import { productsData } from '@/data/data';
 import ProductsCard from "../Card/ProductsCard";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios"
+import LoadingPage from "../Loading/LoadingPage";
+const SolutionsPage = () => {
 
-const ProductsPage = () => {
+    const { data: productsData, isLoading  } = useQuery({
+        queryKey: ["Products"],
+        queryFn: async () => {
+            const res = await axios("http://localhost:4000/products")
+
+          
+
+            return res.data
+        }
+    })
+
+    if(isLoading) return <LoadingPage/>
+
+   
     return (
         <div className="min-h-screen bg-slate-50 font-sans">
             {/* Header Section */}
@@ -52,4 +67,4 @@ const ProductsPage = () => {
     );
 };
 
-export default ProductsPage;
+export default SolutionsPage;

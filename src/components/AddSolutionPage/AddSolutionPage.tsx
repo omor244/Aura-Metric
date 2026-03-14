@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { PlusCircle, Image as ImageIcon, LayoutGrid, Info, Tag } from "lucide-react";
 
-const AddProductPage = () => {
-    // 1. Initialize state with your data structure
+const AddSolutionPage = () => {
+   
     const [formData, setFormData] = useState({
         name: "",
         category: "Advertising",
@@ -14,19 +14,19 @@ const AddProductPage = () => {
         status: "Active"
     });
 
-    // 2. Handle Input Changes
+  
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    // 3. Get All Data on Submit
+  
     const handleSubmit = () => {
-        // Adding a fake ID to match your p1, p2 format
+     
         const finalProductData = {
             id: `p${Math.floor(Math.random() * 1000)}`,
             ...formData,
-            // Formatting price to match your "$299/mo" style
+           
             price: `$${formData.price}/mo`
         };
 
@@ -180,4 +180,4 @@ const AddProductPage = () => {
     );
 };
 
-export default AddProductPage;
+export default AddSolutionPage;
