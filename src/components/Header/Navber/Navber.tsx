@@ -21,6 +21,7 @@ const Navber = () => {
                     <Link href="/about" className="text-slate-700 font-semibold text-lg hover:text-black transition-colors">About</Link>
                     <Link href="/contact" className="text-slate-700 font-semibold text-lg hover:text-black transition-colors">Contact</Link>
                     <Link href="/products" className="text-slate-700 font-semibold text-lg hover:text-black transition-colors">Products</Link>
+                    <Link href="/AddProduct" className="text-slate-700 font-semibold text-lg hover:text-black transition-colors">Add Product</Link>
                 </div>
 
                 {/* Navbar CTA */}

@@ -38,7 +38,7 @@ const ProductsCard = ({ product, idx}: ProductsCardProps) => {
                         <p className="text-xs font-bold text-slate-400 uppercase">Starting at</p>
                         <p className="text-2xl font-black text-slate-900">{product.price}</p>
                     </div>
-                    <Button className="h-12 w-12 rounded-full bg-[#FFB800] hover:bg-black text-black hover:text-white border-2 border-black transition-all shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-none active:translate-y-0.5">
+                    <Button className="h-12 w-12 rounded-full bg-[#FFB800] hover:bg-black text-black hover:text-white border-b border-b-black transition-all shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-none active:translate-y-0.5">
                         <ArrowUpRight size={24} />
                     </Button>
                 </div>
