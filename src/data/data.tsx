@@ -1,5 +1,6 @@
 import { BarChart3, Box, Globe2, Rocket, ShieldCheck, TrendingUp, Zap } from "lucide-react";
 import { AmazonSolution } from "./Type/Type";
+import { QueryClient, useMutation } from "@tanstack/react-query";
 
 export const stats = [
     { label: "Amazon Offers Over Products", value: "600 million" },
@@ -98,59 +99,3 @@ export const values = [
 ];
 
 
-export const productsData: AmazonSolution[] = [
-    {
-        id: "p1",
-        name: "Velocity PPC Suite",
-        category: "Advertising",
-        tier: "Enterprise",
-        description: "Automated bidding engine that reduces ACOS by 25% using real-time market signals.",
-        price: "$299/mo",
-        status: "Best Seller"
-    },
-    {
-        id: "p2",
-        name: "RankMaster SEO",
-        category: "Organic Growth",
-        tier: "Professional",
-        description: "Deep-index keyword harvesting and competitor gap analysis for Category Dominance.",
-        price: "$199/mo",
-        status: "Popular"
-    },
-    {
-        id: "p3",
-        name: "StockFlow AI",
-        category: "Operations",
-        tier: "Business",
-        description: "Predictive inventory forecasting to eliminate stockouts and minimize storage fees.",
-        price: "$149/mo",
-        status: "Essential"
-    },
-    {
-        id: "p4",
-        name: "Global Expansion Kit",
-        category: "Scaling",
-        tier: "Enterprise",
-        description: "One-click localization and compliance management for 14+ international marketplaces.",
-        price: "$499/mo",
-        status: "Expert"
-    },
-    {
-        id: "p5",
-        name: "BuyBox Defender",
-        category: "Security",
-        tier: "Professional",
-        description: "24/7 monitoring for hijackers and unauthorized resellers with instant alert triggers.",
-        price: "$89/mo",
-        status: "New"
-    },
-    {
-        id: "p6",
-        name: "ReviewPulse Engine",
-        category: "Branding",
-        tier: "Business",
-        description: "Legally compliant review automation to build social proof and high-conversion listings.",
-        price: "$129/mo",
-        status: "Hot"
-    }
-];

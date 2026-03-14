@@ -10,9 +10,6 @@ const SolutionsPage = () => {
         queryKey: ["Products"],
         queryFn: async () => {
             const res = await axios("http://localhost:4000/products")
-
-          
-
             return res.data
         }
     })

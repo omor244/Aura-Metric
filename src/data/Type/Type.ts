@@ -1,7 +1,16 @@
 
 
 export interface AmazonSolution {
-    id: string;
+    _id: string;
+    name: string;
+    category: string;
+    tier: string;
+    description: string;
+    price: string;
+    status: string; 
+}
+export interface AmazonSolutionForPost {
+    
     name: string;
     category: string;
     tier: string;
@@ -11,18 +20,7 @@ export interface AmazonSolution {
 }
 
 
-// This defines what a 'Product' looks like
-// export interface ProductType {
-//     id: string;
-//     name: string;
-//     category: string;
-//     tier: string;
-//     description: string;
-//     price: string;
-//     status: string;
-// }
 
-// This defines the Props the component receives
 export interface ProductsCardProps {
     product: AmazonSolution;
     idx: number;
