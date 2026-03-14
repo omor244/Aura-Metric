@@ -1,5 +1,5 @@
 
-import AddSolutionPage from '@/components/AddSolutionPage/AddSolutionPage';
+import AddSolutionPage from '@/Pages/AddSolutionPage/AddSolutionPage';
 
 
 const AddSolution = () => {

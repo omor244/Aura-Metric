@@ -1,4 +1,4 @@
-import SolutionsPage from '@/components/ProductsPage/ProductsPage';
+import SolutionsPage from '@/Pages/ProductsPage/ProductsPage';
 
 
 const solutions = () => {

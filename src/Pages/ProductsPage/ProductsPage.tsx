@@ -1,15 +1,15 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import ProductsCard from "../Card/ProductsCard";
+import ProductsCard from "../../components/Card/ProductsCard";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios"
-import LoadingPage from "../Loading/LoadingPage";
+import LoadingPage from "../../components/Loading/LoadingPage";
 const SolutionsPage = () => {
 
     const { data: productsData, isLoading  } = useQuery({
         queryKey: ["Products"],
         queryFn: async () => {
-            const res = await axios("http://localhost:4000/products")
+            const res = await axios("https://aurametic-backend.vercel.app/products")
             return res.data
         }
     })

@@ -30,21 +30,21 @@ export default function RootLayout({
 
 
   return (
-    <QueryProvider>
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+        >
 
-        <div>
+        <QueryProvider>
+        <div >
          <Navber/>
         </div>
         {children}
         <div>
           <Footer/>
         </div>
+    </QueryProvider>
       </body>
       </html>
-    </QueryProvider>
   );
 }

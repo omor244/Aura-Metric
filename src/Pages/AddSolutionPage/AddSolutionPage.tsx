@@ -1,32 +1,38 @@
 "use client";
 import { useForm } from '@tanstack/react-form';
 import { PlusCircle, LayoutGrid, Info, Tag } from "lucide-react";
-import { Button } from '../ui/button';
+import { Button } from '../../components/ui/button';
 import { useMutation } from '@tanstack/react-query';
 import { AmazonSolutionForPost } from '@/data/Type/Type';
-
+import Swal from 'sweetalert2';
+import axios from 'axios';
 
 
 const AddSolutionPage = () => {
      
     const mutation = useMutation({
         mutationFn: async (newProduct: AmazonSolutionForPost) => {
-            const response = await fetch('http://localhost:4000/products', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(newProduct),
-            });
+            const response = await axios.post('https://aurametic-backend.vercel.app/products', newProduct);
 
-            if (!response.ok) {
+        if (!response.data.insertedId) {
                 throw new Error('Network response was not ok');
             }
-            return response.json();
+           
+            console.log(response)
+
+            return response.data
+          
         },
         onSuccess: () => {
-            alert("Product saved successfully!");
-            form.reset(); // Optional: reset form on success
+            Swal.fire({
+                title: 'Success!',
+                text: 'Product saved successfully!',
+                icon: 'success',
+                confirmButtonColor: '#3085d6', 
+                confirmButtonText: 'Great'
+            });
+
+            form.reset();
         },
         onError: (error) => {
             console.error("Error saving product:", error);
@@ -44,7 +50,7 @@ const AddSolutionPage = () => {
 
         
         onSubmit: async ({ value }) => {
-            // 2. Format the data to match your MongoDB structure
+           
             const finalSolutionData = {
                 ...value,
                 price: `$${value.price}/mo`
@@ -65,7 +71,7 @@ const AddSolutionPage = () => {
                         form.handleSubmit();
                     }}
                 >
-                    {/* --- HEADER --- */}
+                  
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
                         <div className="space-y-1">
                             <h1 className="text-3xl font-[900] text-slate-900 tracking-tight flex items-center gap-3">
